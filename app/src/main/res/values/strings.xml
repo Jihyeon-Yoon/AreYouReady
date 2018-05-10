@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">AreYouReady</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_requirement">requirement</string>
+    <string name="title_volunteer">volunteer</string>
+    <string name="title_book">book</string>
+    <string name="title_credit">credit</string>
+    <string name="title_check">check</string>
 </resources>
