@@ -11,12 +11,12 @@ import android.view.ViewGroup;
  * Created by YJH on 2018-05-17.
  */
 
-public class Requirement extends Fragment {
+public class Check extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.requirement, null);
+        ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.check, null);
 
         return rootView;
     }
