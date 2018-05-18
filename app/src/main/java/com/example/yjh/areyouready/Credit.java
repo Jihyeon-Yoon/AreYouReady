@@ -29,7 +29,7 @@ public class Credit extends Fragment {
         arrFragments[0] = new CreditFirstFragment();
         arrFragments[1] = new CreditSecondFragment();
         arrFragments[2] = new CreditThirdFragment();
-        arrFragments[4] = new CreditFourthFragment();
+        arrFragments[3] = new CreditFourthFragment();
 
         MyPagerAdapter adapter = new MyPagerAdapter(getChildFragmentManager(), arrFragments);
         viewPager.setAdapter(adapter);
