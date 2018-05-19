@@ -12,5 +12,9 @@
         <item name="windowNoTitle">true</item>
 
     </style>
+    <style name="MineCustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>
