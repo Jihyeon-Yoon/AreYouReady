@@ -1,13 +1,56 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.yjh.areyouready.BookScienceFragment">
+    android:orientation="vertical"
+    >
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/linearbuttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="10dp"
+        >
+
+        <Button
+            android:id="@+id/btn_sort_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="평점순"
+            android:textSize="17dp"
+            android:padding="5dp"
+            android:drawableLeft="@drawable/triangle"
+            android:background="#eaebf2"
+            android:layout_marginRight="10dp"
+            />
+        <Button
+            android:id="@+id/btn_sort_name"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="이름순"
+            android:textSize="17dp"
+            android:padding="5dp"
+            android:drawableLeft="@drawable/triangle"
+            android:background="#eaebf2"
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#aba7a7"
+        />
+
+    <ListView
+        android:id="@+id/listview1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_below="@+id/linearbuttons"
+        />
 
-</FrameLayout>
+
+</LinearLayout>
