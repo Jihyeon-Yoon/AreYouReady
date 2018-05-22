@@ -27,10 +27,9 @@ public class Volunteer extends Fragment {
         TabLayout tabLayout = rootView.findViewById(R.id.volunteer_tab);
         ViewPager viewPager = rootView.findViewById(R.id.volunteer_viewPager);
 
-        Fragment[] arrFragments = new Fragment[3];
+        Fragment[] arrFragments = new Fragment[2];
         arrFragments[0] = new VolunteerGachonFragment();
-        arrFragments[1] = new VolunteerSeoulFragment();
-        arrFragments[2] = new VolunteerGyeonggiFragment();
+        arrFragments[1] = new VolunteerGyeonggiFragment();
 
         //MyPagerAdapter adapter = new MyPagerAdapter(getActivity().getSupportFragmentManager());
         // 프래그먼트 안의 프래그먼트라서 getChidFragmentManager를 써야하는 듯...
@@ -63,11 +62,9 @@ public class Volunteer extends Fragment {
         public CharSequence getPageTitle(int position) {
             switch(position) {
                 case 0:
-                    return "학교 주변";
+                    return "30분 이내";
                 case 1:
-                    return "서울";
-                case 2:
-                    return "경기도";
+                    return  "30분 ~ 1시간";
                 default:
                     return "";
             }
