@@ -32,7 +32,7 @@
             android:value="AIzaSyDDLjaUv-vp7cgjNdzoH7oUto2zx9WOpMw" />
 
         <activity
-            android:name=".MainActivity"
+            android:name=".IntroActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,6 +43,7 @@
         <activity android:name=".InfoBookActivity" />
         <activity android:name=".InfoVolunteerActivity"></activity>
         <activity android:name=".VolunteerMapActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
