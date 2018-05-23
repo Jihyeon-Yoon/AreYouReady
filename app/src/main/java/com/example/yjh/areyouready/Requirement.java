@@ -1,5 +1,7 @@
 package com.example.yjh.areyouready;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -11,15 +13,31 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import static android.content.Context.MODE_PRIVATE;
+
 /**
  * Created by YJH on 2018-05-17.
  */
 
 public class Requirement extends Fragment {
 
+    //shared preference
+    SharedPreferences sh_Pref;
+    SharedPreferences.Editor toEdit;
+    String enterYearTemp, enterYearFix;
+    Context context;
+    int totalCredit;
+    int totalCreditNow;
+    int bookNumTemp;
+    int volunNumTemp;
+    int volunTimeTemp;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        sharedPreferences();
+
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.requirement, null);
 
         // TabLayout + ViewPager
@@ -40,6 +58,18 @@ public class Requirement extends Fragment {
         tabLayout.setupWithViewPager(viewPager);
 
         return rootView;
+    }
+
+    public void sharedPreferences() {
+        context = getActivity();
+        sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
+        toEdit = sh_Pref.edit();
+        toEdit.putString("enterYearTemp", "2017");
+        toEdit.putString("enterYearFix", "2017");
+        toEdit.putInt("bookNumStore", 0);
+        toEdit.putInt("volunNumStore", 0);
+        toEdit.putInt("volunTimeStore", 0);
+        toEdit.commit();
     }
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
