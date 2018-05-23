@@ -8,6 +8,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,7 +38,8 @@ public class Credit extends Fragment {
     String enterYearTemp, enterYearFix;
     Context context;
 
-
+    // 추가 -  이상원
+    ViewPager viewPager;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -46,9 +48,11 @@ public class Credit extends Fragment {
 
         //viewPager
         TabLayout tabLayout = rootView.findViewById(R.id.credit_tab);
-        ViewPager viewPager = rootView.findViewById(R.id.credit_viewPager);
+//        ViewPager viewPager = rootView.findViewById(R.id.credit_viewPager);
+        //추가 - 이상원
+        viewPager = rootView.findViewById(R.id.credit_viewPager);
 
-        Fragment[] arrFragments = new Fragment[4];
+        final Fragment[] arrFragments = new Fragment[4];
         arrFragments[0] = new CreditFirstFragment();
         arrFragments[1] = new CreditSecondFragment();
         arrFragments[2] = new CreditThirdFragment();
@@ -80,6 +84,15 @@ public class Credit extends Fragment {
                     enterYear_textView.setText(items[position]);
                     enterYearTemp = items[position];
                     sharedPreferences();
+
+                    // 프래그먼트 업데이트 및 데이터 코드 추가 -  이상원
+                    for(int i = 0; i < 4; i++) {
+                        Bundle bundle = new Bundle(1);
+                        bundle.putString("enterYearTemp", enterYearTemp);
+                        arrFragments[i].setArguments(bundle);
+                    }
+
+                    viewPager.getAdapter().notifyDataSetChanged();
             }
             @Override
             public void onNothingSelected(AdapterView adapterView) {
@@ -108,7 +121,8 @@ public class Credit extends Fragment {
     }
 
 
-    private class MyPagerAdapter extends FragmentPagerAdapter {
+    //private class MyPagerAdapter extends FragmentPagerAdapter {
+    private class MyPagerAdapter extends FragmentStatePagerAdapter { //추가 - 이상원 FragmentStatePagerAdapter
 
         private Fragment[] arrFragments;
 
@@ -120,6 +134,12 @@ public class Credit extends Fragment {
         @Override
         public Fragment getItem(int position) {
             return arrFragments[position];
+        }
+
+        //추가 - 이상원
+        @Override
+        public int getItemPosition(Object object) {
+            return POSITION_NONE;
         }
 
         @Override
