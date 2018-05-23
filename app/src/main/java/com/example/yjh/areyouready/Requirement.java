@@ -20,7 +20,7 @@ import static android.content.Context.MODE_PRIVATE;
  */
 
 public class Requirement extends Fragment {
-
+    //
     //shared preference
     SharedPreferences sh_Pref;
     SharedPreferences.Editor toEdit;
