@@ -3,7 +3,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:id="@+id/credit_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+
+        <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:text="입학년도 :"
+        android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/enterYear_textView"
+            android:layout_width="80dp"
+            android:layout_height="20dp"
+            android:text="2017"
+            android:textStyle="bold" />
+
+        <Spinner
+            android:layout_width="180dp"
+            android:layout_height="20dp"
+            android:id="@+id/enterYear_spinner" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/credit_view"
+        android:layout_below="@+id/credit_linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#f0f0f0"
+        android:layout_marginTop="5dp"/>
+
     <android.support.design.widget.TabLayout
+        android:layout_below="@+id/credit_view"
         android:id="@+id/credit_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
