@@ -52,7 +52,7 @@ public class Requirement extends Fragment {
         arrFragments[3] = new RequirementEngFragment();
 
         //MyPagerAdapter adapter = new MyPagerAdapter(getActivity().getSupportFragmentManager());
-        // 프래그먼트 안의 프래그먼트라서 getChidFragmentManager를 써야하는 듯...
+        // 프래그먼트 안의 프래그먼트라서 getChidFragmentManager를 써야한다.
         MyPagerAdapter adapter = new MyPagerAdapter(getChildFragmentManager(), arrFragments);
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);

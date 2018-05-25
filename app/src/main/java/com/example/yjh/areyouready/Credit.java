@@ -40,6 +40,7 @@ public class Credit extends Fragment {
 
     // 추가 -  이상원
     ViewPager viewPager;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -85,13 +86,14 @@ public class Credit extends Fragment {
                     enterYearTemp = items[position];
                     sharedPreferences();
 
-                    // 프래그먼트 업데이트 및 데이터 코드 추가 -  이상원
+                    // 뷰페이저 업데이트 및 데이터 코드 추가
                     for(int i = 0; i < 4; i++) {
                         Bundle bundle = new Bundle(1);
                         bundle.putString("enterYearTemp", enterYearTemp);
                         arrFragments[i].setArguments(bundle);
                     }
 
+                    // 뷰페이저 업데이트
                     viewPager.getAdapter().notifyDataSetChanged();
             }
             @Override
@@ -122,7 +124,7 @@ public class Credit extends Fragment {
 
 
     //private class MyPagerAdapter extends FragmentPagerAdapter {
-    private class MyPagerAdapter extends FragmentStatePagerAdapter { //추가 - 이상원 FragmentStatePagerAdapter
+    private class MyPagerAdapter extends FragmentStatePagerAdapter {
 
         private Fragment[] arrFragments;
 
@@ -136,7 +138,7 @@ public class Credit extends Fragment {
             return arrFragments[position];
         }
 
-        //추가 - 이상원
+        // viewPager.getAdapter().notifyDataSetChanged(); 사용 시에 콜백되는 함수.
         @Override
         public int getItemPosition(Object object) {
             return POSITION_NONE;
