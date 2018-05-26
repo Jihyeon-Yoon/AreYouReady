@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -27,7 +28,6 @@ public class Check extends Fragment {
     SharedPreferences.Editor toEdit;
     int totalCredit;
     int totalCreditNow;
-
     int bookNumTemp;
     int volunNumTemp;
     int volunTimeTemp;
@@ -63,6 +63,14 @@ public class Check extends Fragment {
     ImageButton volTimeMinus;
 
     Button button_update;
+
+    //delete
+    int book = 15;
+    int volNum = 5;
+    int volTime = 12;
+    int bookR = 25;
+    int volNumR = 5;
+    int volTimeR = 8;
 
     @Nullable
     @Override
@@ -102,17 +110,18 @@ public class Check extends Fragment {
 
         button_update = rootView.findViewById(R.id.button_update);
 
-        //call shared preference
-        applySharedPreference();
 
-        //show stored data
-        showStoredData();
+
+
 
 
         bookPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                book++;
+                textView_bookNow.setText(String.valueOf(book));
+                bookR--;
+                textView_bookRemain.setText(String.valueOf(bookR));
             }
         });
 
@@ -126,6 +135,10 @@ public class Check extends Fragment {
         volNumPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                volNum++;
+                textView_volunNumNow.setText(String.valueOf(volNum));
+                volNumR--;
+                textView_volunNumRemain.setText(String.valueOf(volNumR));
 
             }
         });
@@ -140,7 +153,10 @@ public class Check extends Fragment {
         volTimePlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                volTime++;
+                textView_volunTimeNow.setText(String.valueOf(volTime));
+                volTimeR--;
+                textView_volunTimeRemain.setText(String.valueOf(volTimeR));
             }
         });
 
@@ -156,6 +172,27 @@ public class Check extends Fragment {
         button_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                textView_bookPercent.setText(Double.toString(42.5));
+                textView_bookProgress.setText(String.valueOf(17));
+                progressBar_book.setProgress(17);
+
+                textView_volunNumPercent.setText(String.valueOf(60));
+                textView_volunNumProgress.setText(String.valueOf(6));
+                progressBar_volunteerNum.setProgress(6);
+
+                textView_volunTimePercent.setText(String.valueOf(70));
+                textView_volunTimeProgress.setText(String.valueOf(14));
+                progressBar_volunteerTime.setProgress(14);
+
+                textView_bookNow.setText(String.valueOf(17));
+                textView_volunNumNow.setText(String.valueOf(6));
+                textView_volunTimeNow.setText(String.valueOf(14));
+
+                textView_bookRemain.setText(String.valueOf(23));
+                textView_volunNumRemain.setText(String.valueOf(4));
+                textView_volunTimeRemain.setText(String.valueOf(6));
+
+                Toast.makeText(getActivity(), "업데이트 되었습니다!", Toast.LENGTH_LONG).show();
 
             }
         });
@@ -166,7 +203,6 @@ public class Check extends Fragment {
 
     private void showStoredData() {
         String temp;
-
         //percent
         temp=String.format("%.1f", bookNumTemp/40.0*100);
         textView_bookPercent.setText(temp);
@@ -176,20 +212,17 @@ public class Check extends Fragment {
         textView_volunTimeProgress.setText(temp);
         temp=String.format("%.1f", (double)totalCreditNow/totalCredit*100);
         textView_creditPercent.setText(temp);
-
         //progress num
         textView_bookProgress.setText(String.valueOf(bookNumTemp));
         textView_volunNumProgress.setText(String.valueOf(volunNumTemp));
         textView_volunTimeProgress.setText(String.valueOf(volunTimeTemp));
         textView_creditProgress.setText(String.valueOf(totalCreditNow));
         textView_creditTotal.setText(String.valueOf(totalCredit));
-
         //progress bar
         progressBar_book.setProgress(bookNumTemp);
         progressBar_volunteerNum.setProgress(volunNumTemp);
         progressBar_volunteerTime.setProgress(volunTimeTemp);
         progressBar_credit.setProgress(totalCreditNow);
-
         //current & remain
         textView_bookNow.setText(String.valueOf(bookNumTemp));
         textView_bookRemain.setText(String.valueOf(40-bookNumTemp));
