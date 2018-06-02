@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.yjh.areyouready">
+
     <permission
         android:name="yohan.org.navigationtest.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
@@ -19,10 +20,10 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <uses-library
             android:name="com.goolgle.android.maps"
             android:required="false" />
@@ -41,9 +42,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".InfoBookActivity" />
-        <activity android:name=".InfoVolunteerActivity"></activity>
-        <activity android:name=".VolunteerMapActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".InfoVolunteerActivity" />
+        <activity android:name=".VolunteerMapActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LiberalArtsViewActivity"></activity>
     </application>
 
 </manifest>

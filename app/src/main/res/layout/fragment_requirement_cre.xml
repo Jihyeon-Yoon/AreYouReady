@@ -1,35 +1,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="10"
     android:orientation="vertical"
+    android:weightSum="10"
     android:background="@drawable/bg_line"
-    tools:context="com.example.yjh.areyouready.RequirementCreFragment">
+    >
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
-        android:src="@drawable/req_credit1"
+        android:src="@drawable/req_credit"
         android:scaleType="fitXY"
+        android:layout_weight="9"
         />
 
-    <WebView
+    <!--<WebView
         android:id="@+id/wv_liberal_arts"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3.5"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
+        />-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#b1aeae"
         />
 
-    <ImageView
+    <Button
+        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5"
-        android:src="@drawable/req_credit2"
-        android:scaleType="fitXY"
+        android:text="교양과목 안내 표"
+        android:layout_weight="1"
         />
-
 </LinearLayout>
