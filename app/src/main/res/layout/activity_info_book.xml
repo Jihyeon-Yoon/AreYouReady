@@ -89,7 +89,7 @@
         android:text="소개"
         android:textSize="25dp"
         android:textStyle="bold"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         />
 
@@ -97,9 +97,9 @@
         android:id="@+id/tv_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:text="디스크립션 설명 디스크립션 설명 최대 4줄 제한!"
-        android:lines="4"
+        android:textSize="18dp"
+        android:text="디스크립션 설명 디스크립션 설명 최대 6줄 제한!"
+        android:lines="6"
         android:ellipsize="end"
         />
     <View
@@ -133,6 +133,20 @@
         android:layout_height="wrap_content"
         android:text="청구기호: 811.1 ㄱ497ㅇ"
         android:textSize="20dp"
+        />
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#a0a3a2"
+        android:layout_marginTop="5dp"
+        /> 
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="출처 : YES24, 교보문고, 네이버 책"
         />
 
 </LinearLayout>
