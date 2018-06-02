@@ -20,23 +20,10 @@ import static android.content.Context.MODE_PRIVATE;
  */
 
 public class Requirement extends Fragment {
-    //
-    //shared preference
-    SharedPreferences sh_Pref;
-    SharedPreferences.Editor toEdit;
-    String enterYearTemp, enterYearFix;
-    Context context;
-    int totalCredit;
-    int totalCreditNow;
-    int bookNumTemp;
-    int volunNumTemp;
-    int volunTimeTemp;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
-        sharedPreferences();
 
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.requirement, null);
 
@@ -58,18 +45,6 @@ public class Requirement extends Fragment {
         tabLayout.setupWithViewPager(viewPager);
 
         return rootView;
-    }
-
-    public void sharedPreferences() {
-        context = getActivity();
-        sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
-        toEdit = sh_Pref.edit();
-        toEdit.putString("enterYearTemp", "2017");
-        toEdit.putString("enterYearFix", "2017");
-        toEdit.putInt("bookNumStore", 0);
-        toEdit.putInt("volunNumStore", 0);
-        toEdit.putInt("volunTimeStore", 0);
-        toEdit.commit();
     }
 
     private class MyPagerAdapter extends FragmentPagerAdapter {

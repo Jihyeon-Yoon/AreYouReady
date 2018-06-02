@@ -34,9 +34,11 @@ public class Credit extends Fragment {
 
     //shared preference
     SharedPreferences sh_Pref;
-    SharedPreferences.Editor toEdit;
     String enterYearTemp, enterYearFix;
     Context context;
+
+    //spinner default position
+    int defaultPosition;
 
     // 추가 -  이상원
     ViewPager viewPager;
@@ -76,15 +78,15 @@ public class Credit extends Fragment {
         applySharedPreference();
 
         //set spinner default
-        int position = (2017 - (Integer.parseInt(enterYearFix)));
-        spinner.setSelection(position);
+        defaultPosition = (2017 - (Integer.parseInt(enterYearFix)));
+        spinner.setSelection(defaultPosition);
+        enterYear_textView.setText(enterYearFix);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView adapterView, View view, int position, long id) {
                     enterYear_textView.setText(items[position]);
                     enterYearTemp = items[position];
-                    sharedPreferences();
 
                     // 뷰페이저 업데이트 및 데이터 코드 추가
                     for(int i = 0; i < 4; i++) {
@@ -98,20 +100,13 @@ public class Credit extends Fragment {
             }
             @Override
             public void onNothingSelected(AdapterView adapterView) {
-                    enterYear_textView.setText("2017");
+                    spinner.setSelection(defaultPosition);
+                    enterYear_textView.setText(enterYearFix);
             }
         });
 
 
         return rootView;
-    }
-
-    public void sharedPreferences() {
-        context = getActivity();
-        sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
-        toEdit = sh_Pref.edit();
-        toEdit.putString("enterYearTemp", enterYearTemp);
-        toEdit.commit();
     }
 
     public void applySharedPreference() {

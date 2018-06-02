@@ -27,10 +27,11 @@ public class Check extends Fragment {
     SharedPreferences sh_Pref;
     SharedPreferences.Editor toEdit;
     int totalCredit;
-    int totalCreditNow;
-    int bookNumTemp;
-    int volunNumTemp;
-    int volunTimeTemp;
+    int currentCredit;
+    int bookNum;
+    int volunNum;
+    int volunTime;
+    String enterYearFix;
 
     TextView textView_bookPercent;
     TextView textView_bookProgress;
@@ -64,13 +65,6 @@ public class Check extends Fragment {
 
     Button button_update;
 
-    //delete
-    int book = 15;
-    int volNum = 5;
-    int volTime = 12;
-    int bookR = 25;
-    int volNumR = 5;
-    int volTimeR = 8;
 
     @Nullable
     @Override
@@ -110,60 +104,86 @@ public class Check extends Fragment {
 
         button_update = rootView.findViewById(R.id.button_update);
 
-
-
-
-
+        //call stored data
+        applySharedPreference();
+        getTotalCredit();
+        showStoredData();
 
         bookPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                book++;
-                textView_bookNow.setText(String.valueOf(book));
-                bookR--;
-                textView_bookRemain.setText(String.valueOf(bookR));
+                if(bookNum<40) {
+                    bookNum++;
+                    textView_bookNow.setText(String.valueOf(bookNum));
+                    textView_bookRemain.setText(String.valueOf(40-bookNum));
+                } else {
+                    Toast.makeText(getActivity(), "독후감을 모두 완료했습니다", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         bookMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(bookNum>0) {
+                    bookNum--;
+                    textView_bookNow.setText(String.valueOf(bookNum));
+                    textView_bookRemain.setText(String.valueOf(40-bookNum));
+                } else {
+                    Toast.makeText(getActivity(), "0이 최소값입니다", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         volNumPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                volNum++;
-                textView_volunNumNow.setText(String.valueOf(volNum));
-                volNumR--;
-                textView_volunNumRemain.setText(String.valueOf(volNumR));
-
+                if(volunNum<10) {
+                    volunNum++;
+                    textView_volunNumNow.setText(String.valueOf(volunNum));
+                    textView_volunNumRemain.setText(String.valueOf(10-volunNum));
+                } else {
+                    Toast.makeText(getActivity(), "봉사 횟수를 모두 완료했습니다", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         volNumMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(volunNum>0) {
+                    volunNum--;
+                    textView_volunNumNow.setText(String.valueOf(volunNum));
+                    textView_volunNumRemain.setText(String.valueOf(10-volunNum));
+                } else {
+                    Toast.makeText(getActivity(), "0이 최소값입니다", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         volTimePlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                volTime++;
-                textView_volunTimeNow.setText(String.valueOf(volTime));
-                volTimeR--;
-                textView_volunTimeRemain.setText(String.valueOf(volTimeR));
+                if(volunTime<20) {
+                    volunTime++;
+                    textView_volunTimeNow.setText(String.valueOf(volunTime));
+                    textView_volunTimeRemain.setText(String.valueOf(20-volunTime));
+                } else {
+                    Toast.makeText(getActivity(), "봉사 시간을 모두 완료했습니다", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         volTimeMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(volunTime>0) {
+                    volunTime--;
+                    textView_volunTimeNow.setText(String.valueOf(volunTime));
+                    textView_volunTimeRemain.setText(String.valueOf(20-volunTime));
+                } else {
+                    Toast.makeText(getActivity(), "0이 최소값입니다", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -172,66 +192,66 @@ public class Check extends Fragment {
         button_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView_bookPercent.setText(Double.toString(42.5));
-                textView_bookProgress.setText(String.valueOf(17));
-                progressBar_book.setProgress(17);
+                sharedPreferences();
+                applySharedPreference();
+                getTotalCredit();
+                showStoredData();
 
-                textView_volunNumPercent.setText(String.valueOf(60));
-                textView_volunNumProgress.setText(String.valueOf(6));
-                progressBar_volunteerNum.setProgress(6);
-
-                textView_volunTimePercent.setText(String.valueOf(70));
-                textView_volunTimeProgress.setText(String.valueOf(14));
-                progressBar_volunteerTime.setProgress(14);
-
-                textView_bookNow.setText(String.valueOf(17));
-                textView_volunNumNow.setText(String.valueOf(6));
-                textView_volunTimeNow.setText(String.valueOf(14));
-
-                textView_bookRemain.setText(String.valueOf(23));
-                textView_volunNumRemain.setText(String.valueOf(4));
-                textView_volunTimeRemain.setText(String.valueOf(6));
-
-                Toast.makeText(getActivity(), "업데이트 되었습니다!", Toast.LENGTH_LONG).show();
-
+                Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
             }
         });
-
 
         return rootView;
     }
 
+    private void getTotalCredit() {
+        switch(Integer.parseInt(enterYearFix)) {
+            case 2017:
+            case 2016:
+                totalCredit = 121;
+                break;
+            case 2015:
+            case 2014:
+            case 2013:
+                totalCredit = 120;
+                break;
+            default:
+                break;
+        }
+    }
+
+
     private void showStoredData() {
         String temp;
         //percent
-        temp=String.format("%.1f", bookNumTemp/40.0*100);
+        temp=String.format("%.1f", bookNum/40.0*100);
         textView_bookPercent.setText(temp);
-        temp=String.format("%.1f", volunNumTemp/10.0*100);
+        temp=String.format("%.1f", volunNum/10.0*100);
         textView_volunNumPercent.setText(temp);
-        temp=String.format("%.1f", volunTimeTemp/20.0*100);
-        textView_volunTimeProgress.setText(temp);
-        temp=String.format("%.1f", (double)totalCreditNow/totalCredit*100);
+        temp=String.format("%.1f", volunTime/20.0*100);
+        textView_volunTimePercent.setText(temp);
+        temp=String.format("%.1f", (double)currentCredit/totalCredit*100);
         textView_creditPercent.setText(temp);
         //progress num
-        textView_bookProgress.setText(String.valueOf(bookNumTemp));
-        textView_volunNumProgress.setText(String.valueOf(volunNumTemp));
-        textView_volunTimeProgress.setText(String.valueOf(volunTimeTemp));
-        textView_creditProgress.setText(String.valueOf(totalCreditNow));
+        textView_bookProgress.setText(String.valueOf(bookNum));
+        textView_volunNumProgress.setText(String.valueOf(volunNum));
+        textView_volunTimeProgress.setText(String.valueOf(volunTime));
+        textView_creditProgress.setText(String.valueOf(currentCredit));
         textView_creditTotal.setText(String.valueOf(totalCredit));
         //progress bar
-        progressBar_book.setProgress(bookNumTemp);
-        progressBar_volunteerNum.setProgress(volunNumTemp);
-        progressBar_volunteerTime.setProgress(volunTimeTemp);
-        progressBar_credit.setProgress(totalCreditNow);
+        progressBar_book.setProgress(bookNum);
+        progressBar_volunteerNum.setProgress(volunNum);
+        progressBar_volunteerTime.setProgress(volunTime);
+        progressBar_credit.setProgress(currentCredit);
         //current & remain
-        textView_bookNow.setText(String.valueOf(bookNumTemp));
-        textView_bookRemain.setText(String.valueOf(40-bookNumTemp));
-        textView_volunNumNow.setText(String.valueOf(volunNumTemp));
-        textView_volunNumRemain.setText(String.valueOf(10-volunNumTemp));
-        textView_volunTimeNow.setText(String.valueOf(volunTimeTemp));
-        textView_volunTimeRemain.setText(String.valueOf(20-volunTimeTemp));
-        textView_creditNow.setText(String.valueOf(totalCreditNow));
-        textView_creditRemain.setText(String.valueOf(totalCredit-totalCreditNow));
+        textView_bookNow.setText(String.valueOf(bookNum));
+        textView_bookRemain.setText(String.valueOf(40-bookNum));
+        textView_volunNumNow.setText(String.valueOf(volunNum));
+        textView_volunNumRemain.setText(String.valueOf(10-volunNum));
+        textView_volunTimeNow.setText(String.valueOf(volunTime));
+        textView_volunTimeRemain.setText(String.valueOf(20-volunTime));
+        textView_creditNow.setText(String.valueOf(currentCredit));
+        textView_creditRemain.setText(String.valueOf(totalCredit-currentCredit));
     }
 
     public void sharedPreferences() {
@@ -239,9 +259,9 @@ public class Check extends Fragment {
         sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
         toEdit = sh_Pref.edit();
 
-        toEdit.putInt("bookNumStore", bookNumTemp);
-        toEdit.putInt("volunNumStore", volunNumTemp);
-        toEdit.putInt("volunTimeStore", volunTimeTemp);
+        toEdit.putInt("bookNum", bookNum);
+        toEdit.putInt("volunNum", volunNum);
+        toEdit.putInt("volunTime", volunTime);
 
         toEdit.commit();
     }
@@ -249,25 +269,22 @@ public class Check extends Fragment {
     public void applySharedPreference() {
         context = getActivity();
         sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
-        if(sh_Pref != null && sh_Pref.contains("bookNumStore")) {
-            bookNumTemp = sh_Pref.getInt("bookNumStore", 0);
+        if(sh_Pref != null && sh_Pref.contains("bookNum")) {
+            bookNum = sh_Pref.getInt("bookNum", 0);
         }
-        if(sh_Pref != null && sh_Pref.contains("volunNumStore")) {
-            volunNumTemp = sh_Pref.getInt("volunNumStore", 0);
+        if(sh_Pref != null && sh_Pref.contains("volunNum")) {
+            volunNum = sh_Pref.getInt("volunNum", 0);
         }
-        if(sh_Pref != null && sh_Pref.contains("volunTimeStore")) {
-            volunTimeTemp = sh_Pref.getInt("volunTimeStore", 0);
+        if(sh_Pref != null && sh_Pref.contains("volunTime")) {
+            volunTime = sh_Pref.getInt("volunTime", 0);
         }
-        if(sh_Pref != null && sh_Pref.contains("totalCredit")) {
-            totalCredit = sh_Pref.getInt("totalCredit", 0);
+        if(sh_Pref != null && sh_Pref.contains("enterYearFix")) {
+            enterYearFix = sh_Pref.getString("enterYearFix", "2017");
         }
-        if(sh_Pref != null && sh_Pref.contains("totalCreditNow")) {
-            totalCreditNow = sh_Pref.getInt("totalCreditNow", 0);
+        if(sh_Pref != null && sh_Pref.contains("currentCredit")) {
+            currentCredit = sh_Pref.getInt("currentCredit", 0);
         }
     }
-
-
-
 
 
 }

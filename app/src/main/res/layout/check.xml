@@ -290,8 +290,14 @@
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text=" / "
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/textView_creditTotal"
-            android:text=" / 120"
+            android:text="120"
             android:textColor="#3ab93a"
             android:textStyle="bold"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
