@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -40,7 +39,6 @@ public class Credit extends Fragment {
     //spinner default position
     int defaultPosition;
 
-    // 추가 -  이상원
     ViewPager viewPager;
 
     @Nullable
@@ -48,22 +46,6 @@ public class Credit extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.credit, null);
-
-        //viewPager
-        TabLayout tabLayout = rootView.findViewById(R.id.credit_tab);
-//        ViewPager viewPager = rootView.findViewById(R.id.credit_viewPager);
-        //추가 - 이상원
-        viewPager = rootView.findViewById(R.id.credit_viewPager);
-
-        final Fragment[] arrFragments = new Fragment[4];
-        arrFragments[0] = new CreditFirstFragment();
-        arrFragments[1] = new CreditSecondFragment();
-        arrFragments[2] = new CreditThirdFragment();
-        arrFragments[3] = new CreditFourthFragment();
-
-        MyPagerAdapter adapter = new MyPagerAdapter(getChildFragmentManager(), arrFragments);
-        viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
 
         enterYear_textView = rootView.findViewById(R.id.enterYear_textView);
 
@@ -82,26 +64,42 @@ public class Credit extends Fragment {
         spinner.setSelection(defaultPosition);
         enterYear_textView.setText(enterYearFix);
 
+        //viewPager
+        TabLayout tabLayout = rootView.findViewById(R.id.credit_tab);
+        viewPager = rootView.findViewById(R.id.credit_viewPager);
+
+        final Fragment[] arrFragments = new Fragment[4];
+        arrFragments[0] = new CreditFirstFragment();
+        arrFragments[1] = new CreditSecondFragment();
+        arrFragments[2] = new CreditThirdFragment();
+        arrFragments[3] = new CreditFourthFragment();
+
+        MyPagerAdapter adapter = new MyPagerAdapter(getChildFragmentManager(), arrFragments);
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
+
+        // spinner select event
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
             @Override
             public void onItemSelected(AdapterView adapterView, View view, int position, long id) {
-                    enterYear_textView.setText(items[position]);
-                    enterYearTemp = items[position];
+                enterYear_textView.setText(items[position]);
+                enterYearTemp = items[position];
 
-                    // 뷰페이저 업데이트 및 데이터 코드 추가
-                    for(int i = 0; i < 4; i++) {
-                        Bundle bundle = new Bundle(1);
-                        bundle.putString("enterYearTemp", enterYearTemp);
-                        arrFragments[i].setArguments(bundle);
-                    }
+                // 뷰페이저 업데이트 및 데이터 코드 추가
+                for(int i = 0; i < 4; i++) {
+                    Bundle bundle = new Bundle(1);
+                    bundle.putString("enterYearTemp", enterYearTemp);
+                    arrFragments[i].setArguments(bundle);
+                }
 
-                    // 뷰페이저 업데이트
-                    viewPager.getAdapter().notifyDataSetChanged();
+                // 뷰페이저 업데이트
+                viewPager.getAdapter().notifyDataSetChanged();
             }
             @Override
             public void onNothingSelected(AdapterView adapterView) {
-                    spinner.setSelection(defaultPosition);
-                    enterYear_textView.setText(enterYearFix);
+                spinner.setSelection(defaultPosition);
+                enterYear_textView.setText(enterYearFix);
             }
         });
 

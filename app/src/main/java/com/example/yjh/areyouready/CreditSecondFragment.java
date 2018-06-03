@@ -238,8 +238,16 @@ public class CreditSecondFragment extends Fragment {
         tb_year.put(2016, table2016);
         tb_year.put(2017, table2017);
 
-        // getArguments()를 이용해 Credit fragment에서 전달된 연도값을 받는다.
-        String enterYear = "2017"; // default year - 2017, (별 이유없이 그냥 2017로 설정함...)
+        enterYear = "2017"; // default year - 2017, (별 이유없이 그냥 2017로 설정함...)
+
+        // sharedPreference에 저장된 enterYear값이 있다면 가져온다.
+        context = getActivity();
+        sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
+        if(sh_Pref != null) {
+            enterYear = sh_Pref.getString("enterYearFix", "2017");
+        }
+
+        // getArguments()를 이용해 Credit fragment에서 전달된 연도값을 받는다.(spinner에서 연도를 선택한 경우)
         if(getArguments() != null) {
             enterYear = getArguments().getString("enterYearTemp");
         }
