@@ -208,6 +208,26 @@ public class CreditFourthFragment extends Fragment {
             }
         }
 
+        switch(enterYear) {
+            case "2017":
+                showDefault2017_4();
+                break;
+            case "2016":
+                showDefault2016_4();
+                break;
+            case "2015":
+                showDefault2015_4();
+                break;
+            case "2014":
+                showDefault2014_4();
+                break;
+            case "2013":
+                showDefault2013_4();
+                break;
+            default:
+                break;
+        }
+
         //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지
         button2017.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -609,6 +629,7 @@ public class CreditFourthFragment extends Fragment {
         return rootView;
     }
 
+    /*
     public void onResume() {
         super.onResume();
         //enterYear 값에 맞는 default 보여주기
@@ -632,7 +653,7 @@ public class CreditFourthFragment extends Fragment {
                 break;
         }
 
-    }
+    }*/
 
     public void sharedPreferences() {
         context = getActivity();
