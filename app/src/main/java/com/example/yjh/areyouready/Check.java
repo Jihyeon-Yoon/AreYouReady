@@ -32,6 +32,7 @@ public class Check extends Fragment {
     int volunNum;
     int volunTime;
     String enterYearFix;
+    int sum2017_1;
 
     TextView textView_bookPercent;
     TextView textView_bookProgress;
@@ -252,6 +253,10 @@ public class Check extends Fragment {
         textView_volunTimeRemain.setText(String.valueOf(20-volunTime));
         textView_creditNow.setText(String.valueOf(currentCredit));
         textView_creditRemain.setText(String.valueOf(totalCredit-currentCredit));
+        //잠깐 추가
+        textView_creditNow.setText(String.valueOf(sum2017_1));
+
+
     }
 
     public void sharedPreferences() {
@@ -283,6 +288,10 @@ public class Check extends Fragment {
         }
         if(sh_Pref != null && sh_Pref.contains("currentCredit")) {
             currentCredit = sh_Pref.getInt("currentCredit", 0);
+        }
+        //잠깐 추가
+        if(sh_Pref != null && sh_Pref.contains("sum2017_1")) {
+            sum2017_1 = sh_Pref.getInt("sum2017_1", 0);
         }
     }
 
