@@ -32,7 +32,6 @@ public class Check extends Fragment {
     int volunNum;
     int volunTime;
     String enterYearFix;
-    int sum2017_1;
 
     TextView textView_bookPercent;
     TextView textView_bookProgress;
@@ -108,6 +107,7 @@ public class Check extends Fragment {
         //call stored data
         applySharedPreference();
         getTotalCredit();
+        getCurrentCredit();
         showStoredData();
 
         bookPlus.setOnClickListener(new View.OnClickListener() {
@@ -188,14 +188,12 @@ public class Check extends Fragment {
             }
         });
 
-
         //update
         button_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sharedPreferences();
                 applySharedPreference();
-                getTotalCredit();
                 showStoredData();
 
                 Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
@@ -219,8 +217,51 @@ public class Check extends Fragment {
             default:
                 break;
         }
+        storeTotalCredit(totalCredit);
     }
 
+    private void storeTotalCredit(int total) {
+        context = getActivity();
+        sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
+        toEdit = sh_Pref.edit();
+
+        toEdit.putInt("totalCredit", total);
+
+        toEdit.commit();
+    }
+
+    private void getCurrentCredit() {
+        switch(Integer.parseInt(enterYearFix)) {
+            case 2017:
+                get2017SharedPreference();
+                break;
+            case 2016:
+                get2016SharedPreference();
+                break;
+            case 2015:
+                get2015SharedPreference();
+                break;
+            case 2014:
+                get2014SharedPreference();
+                break;
+            case 2013:
+                get2013SharedPreference();
+                break;
+            default:
+                break;
+        }
+        storeCurrentCredit(currentCredit);
+    }
+
+    private void storeCurrentCredit(int sum) {
+        context = getActivity();
+        sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
+        toEdit = sh_Pref.edit();
+
+        toEdit.putInt("currentCredit", sum);
+
+        toEdit.commit();
+    }
 
     private void showStoredData() {
         String temp;
@@ -253,10 +294,6 @@ public class Check extends Fragment {
         textView_volunTimeRemain.setText(String.valueOf(20-volunTime));
         textView_creditNow.setText(String.valueOf(currentCredit));
         textView_creditRemain.setText(String.valueOf(totalCredit-currentCredit));
-        //잠깐 추가
-        textView_creditNow.setText(String.valueOf(sum2017_1));
-
-
     }
 
     public void sharedPreferences() {
@@ -286,14 +323,133 @@ public class Check extends Fragment {
         if(sh_Pref != null && sh_Pref.contains("enterYearFix")) {
             enterYearFix = sh_Pref.getString("enterYearFix", "2017");
         }
+        if(sh_Pref != null && sh_Pref.contains("totalCredit")) {
+            totalCredit = sh_Pref.getInt("totalCredit", 121);
+        }
         if(sh_Pref != null && sh_Pref.contains("currentCredit")) {
             currentCredit = sh_Pref.getInt("currentCredit", 0);
         }
-        //잠깐 추가
-        if(sh_Pref != null && sh_Pref.contains("sum2017_1")) {
-            sum2017_1 = sh_Pref.getInt("sum2017_1", 0);
-        }
     }
 
+    private void get2017SharedPreference() {
+        int sum=0;
+        context = getActivity();
+        sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
+
+        if(sh_Pref != null && sh_Pref.contains("sum2017_1")) {
+            sum += sh_Pref.getInt("sum2017_1", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2017_2")) {
+            sum += sh_Pref.getInt("sum2017_2", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2017_3")) {
+            sum += sh_Pref.getInt("sum2017_3", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2017_4")) {
+            sum += sh_Pref.getInt("sum2017_4", 0);
+        }
+
+        currentCredit = sum;
+        storeCurrentCredit(sum);
+    }
+
+    private void get2016SharedPreference() {
+        int sum=0;
+        context = getActivity();
+        sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
+
+        if(sh_Pref != null && sh_Pref.contains("sum2016_1")) {
+            sum += sh_Pref.getInt("sum2016_1", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2016_2")) {
+            sum += sh_Pref.getInt("sum2016_2", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2016_3")) {
+            sum += sh_Pref.getInt("sum2016_3", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2016_4")) {
+            sum += sh_Pref.getInt("sum2016_4", 0);
+        }
+        currentCredit = sum;
+        storeCurrentCredit(sum);
+    }
+
+    private void get2015SharedPreference() {
+        int sum=0;
+        context = getActivity();
+        sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
+
+        if(sh_Pref != null && sh_Pref.contains("sum2015_1")) {
+            sum += sh_Pref.getInt("sum2015_1", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2015_2")) {
+            sum += sh_Pref.getInt("sum2015_2", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2015_3")) {
+            sum += sh_Pref.getInt("sum2015_3", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2015_4")) {
+            sum += sh_Pref.getInt("sum2015_4", 0);
+        }
+        currentCredit = sum;
+        storeCurrentCredit(sum);
+    }
+
+    private void get2014SharedPreference() {
+        int sum=0;
+        context = getActivity();
+        sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
+
+        if(sh_Pref != null && sh_Pref.contains("sum2014_1")) {
+            sum += sh_Pref.getInt("sum2014_1", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2014_2")) {
+            sum += sh_Pref.getInt("sum2014_2", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2014_3")) {
+            sum += sh_Pref.getInt("sum2014_3", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2014_4")) {
+            sum += sh_Pref.getInt("sum2014_4", 0);
+        }
+        currentCredit = sum;
+        storeCurrentCredit(sum);
+    }
+
+    private void get2013SharedPreference() {
+        int sum=0;
+        context = getActivity();
+        sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
+
+        if(sh_Pref != null && sh_Pref.contains("sum2013_1")) {
+            sum += sh_Pref.getInt("sum2013_1", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2013_2")) {
+            sum += sh_Pref.getInt("sum2013_2", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2013_3")) {
+            sum += sh_Pref.getInt("sum2013_3", 0);
+        }
+
+        if(sh_Pref != null && sh_Pref.contains("sum2013_4")) {
+            sum += sh_Pref.getInt("sum2013_4", 0);
+        }
+        currentCredit = sum;
+        storeCurrentCredit(sum);
+    }
 
 }

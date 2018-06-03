@@ -67,6 +67,48 @@ public class CreditFirstFragment extends Fragment {
     CheckBox chk2016_13;
     CheckBox chk2016_14;
 
+    CheckBox chk2015_1;
+    CheckBox chk2015_2;
+    CheckBox chk2015_3;
+    CheckBox chk2015_4;
+    CheckBox chk2015_5;
+    CheckBox chk2015_6;
+    CheckBox chk2015_7;
+    CheckBox chk2015_8;
+    CheckBox chk2015_9;
+    CheckBox chk2015_10;
+    CheckBox chk2015_11;
+    CheckBox chk2015_12;
+    CheckBox chk2015_13;
+
+    CheckBox chk2014_1;
+    CheckBox chk2014_2;
+    CheckBox chk2014_3;
+    CheckBox chk2014_4;
+    CheckBox chk2014_5;
+    CheckBox chk2014_6;
+    CheckBox chk2014_7;
+    CheckBox chk2014_8;
+    CheckBox chk2014_9;
+    CheckBox chk2014_10;
+    CheckBox chk2014_11;
+    CheckBox chk2014_12;
+    CheckBox chk2014_13;
+
+    CheckBox chk2013_1;
+    CheckBox chk2013_2;
+    CheckBox chk2013_3;
+    CheckBox chk2013_4;
+    CheckBox chk2013_5;
+    CheckBox chk2013_6;
+    CheckBox chk2013_7;
+    CheckBox chk2013_8;
+    CheckBox chk2013_9;
+    CheckBox chk2013_10;
+    CheckBox chk2013_11;
+    CheckBox chk2013_12;
+    CheckBox chk2013_13;
+
     Button button2017;
     Button button2016;
     Button button2015;
@@ -74,7 +116,10 @@ public class CreditFirstFragment extends Fragment {
     Button button2013;
 
     String file2017_1 = "file2017_1.txt";
-
+    String file2016_1 = "file2016_1.txt";
+    String file2015_1 = "file2015_1.txt";
+    String file2014_1 = "file2014_1.txt";
+    String file2013_1 = "file2013_1.txt";
 
     //shared preference
     SharedPreferences sh_Pref;
@@ -87,6 +132,11 @@ public class CreditFirstFragment extends Fragment {
 
     // 과목순서 - 체크박스 매핑
     HashMap<Integer, CheckBox> defaultChk2017_1;
+    HashMap<Integer, CheckBox> defaultChk2016_1;
+    HashMap<Integer, CheckBox> defaultChk2015_1;
+    HashMap<Integer, CheckBox> defaultChk2014_1;
+    HashMap<Integer, CheckBox> defaultChk2013_1;
+
 
     public CreditFirstFragment() {
         // Required empty public constructor
@@ -124,8 +174,68 @@ public class CreditFirstFragment extends Fragment {
         chk2017_16= rootView.findViewById(R.id.chk2017_16);
         chk2017_17= rootView.findViewById(R.id.chk2017_17);
 
-        button2017= rootView.findViewById(R.id.button2017);
+        chk2016_1 = rootView.findViewById(R.id.chk2016_1);
+        chk2016_2= rootView.findViewById(R.id.chk2016_2);
+        chk2016_3= rootView.findViewById(R.id.chk2016_3);
+        chk2016_4= rootView.findViewById(R.id.chk2016_4);
+        chk2016_5= rootView.findViewById(R.id.chk2016_5);
+        chk2016_6= rootView.findViewById(R.id.chk2016_6);
+        chk2016_7= rootView.findViewById(R.id.chk2016_7);
+        chk2016_8= rootView.findViewById(R.id.chk2016_8);
+        chk2016_9= rootView.findViewById(R.id.chk2016_9);
+        chk2016_10= rootView.findViewById(R.id.chk2016_10);
+        chk2016_11= rootView.findViewById(R.id.chk2016_11);
+        chk2016_12= rootView.findViewById(R.id.chk2016_12);
+        chk2016_13= rootView.findViewById(R.id.chk2016_13);
+        chk2016_14= rootView.findViewById(R.id.chk2016_14);
 
+        chk2015_1 = rootView.findViewById(R.id.chk2015_1);
+        chk2015_2= rootView.findViewById(R.id.chk2015_2);
+        chk2015_3= rootView.findViewById(R.id.chk2015_3);
+        chk2015_4= rootView.findViewById(R.id.chk2015_4);
+        chk2015_5= rootView.findViewById(R.id.chk2015_5);
+        chk2015_6= rootView.findViewById(R.id.chk2015_6);
+        chk2015_7= rootView.findViewById(R.id.chk2015_7);
+        chk2015_8= rootView.findViewById(R.id.chk2015_8);
+        chk2015_9= rootView.findViewById(R.id.chk2015_9);
+        chk2015_10= rootView.findViewById(R.id.chk2015_10);
+        chk2015_11= rootView.findViewById(R.id.chk2015_11);
+        chk2015_12= rootView.findViewById(R.id.chk2015_12);
+        chk2015_13= rootView.findViewById(R.id.chk2015_13);
+
+        chk2014_1 = rootView.findViewById(R.id.chk2014_1);
+        chk2014_2= rootView.findViewById(R.id.chk2014_2);
+        chk2014_3= rootView.findViewById(R.id.chk2014_3);
+        chk2014_4= rootView.findViewById(R.id.chk2014_4);
+        chk2014_5= rootView.findViewById(R.id.chk2014_5);
+        chk2014_6= rootView.findViewById(R.id.chk2014_6);
+        chk2014_7= rootView.findViewById(R.id.chk2014_7);
+        chk2014_8= rootView.findViewById(R.id.chk2014_8);
+        chk2014_9= rootView.findViewById(R.id.chk2014_9);
+        chk2014_10= rootView.findViewById(R.id.chk2014_10);
+        chk2014_11= rootView.findViewById(R.id.chk2014_11);
+        chk2014_12= rootView.findViewById(R.id.chk2014_12);
+        chk2014_13= rootView.findViewById(R.id.chk2014_13);
+
+        chk2013_1 = rootView.findViewById(R.id.chk2013_1);
+        chk2013_2= rootView.findViewById(R.id.chk2013_2);
+        chk2013_3= rootView.findViewById(R.id.chk2013_3);
+        chk2013_4= rootView.findViewById(R.id.chk2013_4);
+        chk2013_5= rootView.findViewById(R.id.chk2013_5);
+        chk2013_6= rootView.findViewById(R.id.chk2013_6);
+        chk2013_7= rootView.findViewById(R.id.chk2013_7);
+        chk2013_8= rootView.findViewById(R.id.chk2013_8);
+        chk2013_9= rootView.findViewById(R.id.chk2013_9);
+        chk2013_10= rootView.findViewById(R.id.chk2013_10);
+        chk2013_11= rootView.findViewById(R.id.chk2013_11);
+        chk2013_12= rootView.findViewById(R.id.chk2013_12);
+        chk2013_13= rootView.findViewById(R.id.chk2013_13);
+
+        button2017= rootView.findViewById(R.id.button2017);
+        button2016= rootView.findViewById(R.id.button2016);
+        button2015= rootView.findViewById(R.id.button2015);
+        button2014= rootView.findViewById(R.id.button2014);
+        button2013= rootView.findViewById(R.id.button2013);
 
         // <연도 - 테이블> 해시맵을 생성하고 연도와 그에 해당하는 테이블을 매핑한다.
         tb_year = new HashMap<Integer, TableLayout>();
@@ -141,24 +251,18 @@ public class CreditFirstFragment extends Fragment {
             enterYear = getArguments().getString("enterYearTemp");
         }
 
-
         // 2013 ~ 2017중 Credit fragment에서 전달된 값에 해당하는 테이블만 VISIBLE로 바꾸고, 나머지 테이블은 GONE으로 바꾼다.
         for(int i = 2013; i <= 2017; i++) {
             TableLayout tl = tb_year.get(i); // i값에 매핑된 테이블을 참조한다.
             if(i == Integer.parseInt(enterYear)) { // 전달된 값에 해당하는 경우
                 tl.setVisibility(View.VISIBLE);
-
-
             }
             else { // 전달된 값이 아닌 경우
                 tl.setVisibility(View.GONE);
             }
         }
 
-
-
-
-
+        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지
         button2017.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -288,6 +392,450 @@ public class CreditFirstFragment extends Fragment {
                     //2017_1 이수학점 총합 저장
                     sharedPreferencesCreditSum("sum2017_1", sum);
                     sharedPreferences();
+                    Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지
+        button2016.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                try {
+                    int sum=0;
+                    OutputStreamWriter out = new OutputStreamWriter(getActivity().openFileOutput(file2016_1, 0));
+                    if(chk2016_1.isChecked()) {
+                        chk2016_1.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2016_2.isChecked()) {
+                        chk2016_2.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2016_3.isChecked()) {
+                        chk2016_3.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2016_4.isChecked()) {
+                        chk2016_4.setText("완료");
+                        out.write("1\n");
+                        sum += 1;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2016_5.isChecked()) {
+                        chk2016_5.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2016_6.isChecked()) {
+                        chk2016_6.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2016_7.isChecked()) {
+                        chk2016_7.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2016_8.isChecked()) {
+                        chk2016_8.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2016_9.isChecked()) {
+                        chk2016_9.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2016_10.isChecked()) {
+                        chk2016_10.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2016_11.isChecked()) {
+                        chk2016_11.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2016_12.isChecked()) {
+                        chk2016_12.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2016_13.isChecked()) {
+                        chk2016_13.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2016_14.isChecked()) {
+                        chk2016_14.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    out.close();
+                    //2016_1 이수학점 총합 저장
+                    sharedPreferencesCreditSum("sum2016_1", sum);
+                    sharedPreferences();
+                    Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지
+        button2015.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                try {
+                    int sum=0;
+                    OutputStreamWriter out = new OutputStreamWriter(getActivity().openFileOutput(file2015_1, 0));
+                    if(chk2015_1.isChecked()) {
+                        chk2015_1.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2015_2.isChecked()) {
+                        chk2015_2.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2015_3.isChecked()) {
+                        chk2015_3.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2015_4.isChecked()) {
+                        chk2015_4.setText("완료");
+                        out.write("1\n");
+                        sum += 1;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2015_5.isChecked()) {
+                        chk2015_5.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2015_6.isChecked()) {
+                        chk2015_6.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2015_7.isChecked()) {
+                        chk2015_7.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2015_8.isChecked()) {
+                        chk2015_8.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2015_9.isChecked()) {
+                        chk2015_9.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2015_10.isChecked()) {
+                        chk2015_10.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2015_11.isChecked()) {
+                        chk2015_11.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2015_12.isChecked()) {
+                        chk2015_12.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2015_13.isChecked()) {
+                        chk2015_13.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    out.close();
+                    //2015_1 이수학점 총합 저장
+                    sharedPreferencesCreditSum("sum2015_1", sum);
+                    sharedPreferences();
+                    Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지
+        button2014.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                try {
+                    int sum=0;
+                    OutputStreamWriter out = new OutputStreamWriter(getActivity().openFileOutput(file2014_1, 0));
+                    if(chk2014_1.isChecked()) {
+                        chk2014_1.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2014_2.isChecked()) {
+                        chk2014_2.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2014_3.isChecked()) {
+                        chk2014_3.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2014_4.isChecked()) {
+                        chk2014_4.setText("완료");
+                        out.write("1\n");
+                        sum += 1;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2014_5.isChecked()) {
+                        chk2014_5.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2014_6.isChecked()) {
+                        chk2014_6.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2014_7.isChecked()) {
+                        chk2014_7.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2014_8.isChecked()) {
+                        chk2014_8.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2014_9.isChecked()) {
+                        chk2014_9.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2014_10.isChecked()) {
+                        chk2014_10.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2014_11.isChecked()) {
+                        chk2014_11.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2014_12.isChecked()) {
+                        chk2014_12.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2014_13.isChecked()) {
+                        chk2014_13.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    out.close();
+                    //2014_1 이수학점 총합 저장
+                    sharedPreferencesCreditSum("sum2014_1", sum);
+                    sharedPreferences();
+                    Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지
+        button2013.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                try {
+                    int sum=0;
+                    OutputStreamWriter out = new OutputStreamWriter(getActivity().openFileOutput(file2013_1, 0));
+                    if(chk2013_1.isChecked()) {
+                        chk2013_1.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2013_2.isChecked()) {
+                        chk2013_2.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2013_3.isChecked()) {
+                        chk2013_3.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2013_4.isChecked()) {
+                        chk2013_4.setText("완료");
+                        out.write("1\n");
+                        sum += 1;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2013_5.isChecked()) {
+                        chk2013_5.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2013_6.isChecked()) {
+                        chk2013_6.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2013_7.isChecked()) {
+                        chk2013_7.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2013_8.isChecked()) {
+                        chk2013_8.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2013_9.isChecked()) {
+                        chk2013_9.setText("완료");
+                        out.write("3\n");
+                        sum += 3;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2013_10.isChecked()) {
+                        chk2013_10.setText("완료");
+                        out.write("1\n");
+                        sum += 1;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2013_11.isChecked()) {
+                        chk2013_11.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2013_12.isChecked()) {
+                        chk2013_12.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    if(chk2013_13.isChecked()) {
+                        chk2013_13.setText("완료");
+                        out.write("2\n");
+                        sum += 2;
+                    } else {
+                        out.write("0\n");
+                    }
+                    out.close();
+                    //2013_1 이수학점 총합 저장
+                    sharedPreferencesCreditSum("sum2013_1", sum);
+                    sharedPreferences();
+                    Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -297,7 +845,6 @@ public class CreditFirstFragment extends Fragment {
         return rootView;
     }
 
-
     public void onResume() {
         super.onResume();
         //enterYear 값에 맞는 default 보여주기
@@ -305,7 +852,6 @@ public class CreditFirstFragment extends Fragment {
             case "2017":
                 showDefault2017_1();
                 break;
-                /*
             case "2016":
                 showDefault2016_1();
                 break;
@@ -318,7 +864,6 @@ public class CreditFirstFragment extends Fragment {
             case "2013":
                 showDefault2013_1();
                 break;
-                */
             default:
                 break;
         }
@@ -340,8 +885,6 @@ public class CreditFirstFragment extends Fragment {
         toEdit.putInt(year, sum);
         toEdit.commit();
     }
-
-
 
     private void showDefault2017_1() {
         int i=0;
@@ -376,7 +919,8 @@ public class CreditFirstFragment extends Fragment {
                 while ((str = reader.readLine()) != null) {
                     i++;
                     if(Integer.parseInt(str) != 0) {
-                        chkTemp = defaultChk2017_1.get(i); //i 값에 매핑된 체크박스 참조
+                        //i 값에 매핑된 체크박스 참조
+                        chkTemp = defaultChk2017_1.get(i);
                         chkTemp.setChecked(true);
                         chkTemp.setText("완료");
                     }
@@ -388,7 +932,173 @@ public class CreditFirstFragment extends Fragment {
         }
     }
 
+    private void showDefault2016_1() {
+        int i=0;
+        CheckBox chkTemp;
 
+        //<과목순서 - 체크박스> 해시맵 생성 & 매핑
+        defaultChk2016_1 = new HashMap<Integer, CheckBox>();
+        defaultChk2016_1.put(1, chk2016_1);
+        defaultChk2016_1.put(2, chk2016_2);
+        defaultChk2016_1.put(3, chk2016_3);
+        defaultChk2016_1.put(4, chk2016_4);
+        defaultChk2016_1.put(5, chk2016_5);
+        defaultChk2016_1.put(6, chk2016_6);
+        defaultChk2016_1.put(7, chk2016_7);
+        defaultChk2016_1.put(8, chk2016_8);
+        defaultChk2016_1.put(9, chk2016_9);
+        defaultChk2016_1.put(10, chk2016_10);
+        defaultChk2016_1.put(11, chk2016_11);
+        defaultChk2016_1.put(12, chk2016_12);
+        defaultChk2016_1.put(13, chk2016_13);
+        defaultChk2016_1.put(14, chk2016_14);
 
+        try {
+            InputStream in = getActivity().openFileInput(file2016_1);
+            if(in != null) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+                String str = "";
+
+                while ((str = reader.readLine()) != null) {
+                    i++;
+                    if(Integer.parseInt(str) != 0) {
+                        //i 값에 매핑된 체크박스 참조
+                        chkTemp = defaultChk2016_1.get(i);
+                        chkTemp.setChecked(true);
+                        chkTemp.setText("완료");
+                    }
+                }
+                in.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showDefault2015_1() {
+        int i=0;
+        CheckBox chkTemp;
+
+        //<과목순서 - 체크박스> 해시맵 생성 & 매핑
+        defaultChk2015_1 = new HashMap<Integer, CheckBox>();
+        defaultChk2015_1.put(1, chk2015_1);
+        defaultChk2015_1.put(2, chk2015_2);
+        defaultChk2015_1.put(3, chk2015_3);
+        defaultChk2015_1.put(4, chk2015_4);
+        defaultChk2015_1.put(5, chk2015_5);
+        defaultChk2015_1.put(6, chk2015_6);
+        defaultChk2015_1.put(7, chk2015_7);
+        defaultChk2015_1.put(8, chk2015_8);
+        defaultChk2015_1.put(9, chk2015_9);
+        defaultChk2015_1.put(10, chk2015_10);
+        defaultChk2015_1.put(11, chk2015_11);
+        defaultChk2015_1.put(12, chk2015_12);
+        defaultChk2015_1.put(13, chk2015_13);
+
+        try {
+            InputStream in = getActivity().openFileInput(file2015_1);
+            if(in != null) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+                String str = "";
+
+                while ((str = reader.readLine()) != null) {
+                    i++;
+                    if(Integer.parseInt(str) != 0) {
+                        //i 값에 매핑된 체크박스 참조
+                        chkTemp = defaultChk2015_1.get(i);
+                        chkTemp.setChecked(true);
+                        chkTemp.setText("완료");
+                    }
+                }
+                in.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showDefault2014_1() {
+        int i=0;
+        CheckBox chkTemp;
+
+        //<과목순서 - 체크박스> 해시맵 생성 & 매핑
+        defaultChk2014_1 = new HashMap<Integer, CheckBox>();
+        defaultChk2014_1.put(1, chk2014_1);
+        defaultChk2014_1.put(2, chk2014_2);
+        defaultChk2014_1.put(3, chk2014_3);
+        defaultChk2014_1.put(4, chk2014_4);
+        defaultChk2014_1.put(5, chk2014_5);
+        defaultChk2014_1.put(6, chk2014_6);
+        defaultChk2014_1.put(7, chk2014_7);
+        defaultChk2014_1.put(8, chk2014_8);
+        defaultChk2014_1.put(9, chk2014_9);
+        defaultChk2014_1.put(10, chk2014_10);
+        defaultChk2014_1.put(11, chk2014_11);
+        defaultChk2014_1.put(12, chk2014_12);
+        defaultChk2014_1.put(13, chk2014_13);
+
+        try {
+            InputStream in = getActivity().openFileInput(file2014_1);
+            if(in != null) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+                String str = "";
+
+                while ((str = reader.readLine()) != null) {
+                    i++;
+                    if(Integer.parseInt(str) != 0) {
+                        //i 값에 매핑된 체크박스 참조
+                        chkTemp = defaultChk2014_1.get(i);
+                        chkTemp.setChecked(true);
+                        chkTemp.setText("완료");
+                    }
+                }
+                in.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showDefault2013_1() {
+        int i=0;
+        CheckBox chkTemp;
+
+        //<과목순서 - 체크박스> 해시맵 생성 & 매핑
+        defaultChk2013_1 = new HashMap<Integer, CheckBox>();
+        defaultChk2013_1.put(1, chk2013_1);
+        defaultChk2013_1.put(2, chk2013_2);
+        defaultChk2013_1.put(3, chk2013_3);
+        defaultChk2013_1.put(4, chk2013_4);
+        defaultChk2013_1.put(5, chk2013_5);
+        defaultChk2013_1.put(6, chk2013_6);
+        defaultChk2013_1.put(7, chk2013_7);
+        defaultChk2013_1.put(8, chk2013_8);
+        defaultChk2013_1.put(9, chk2013_9);
+        defaultChk2013_1.put(10, chk2013_10);
+        defaultChk2013_1.put(11, chk2013_11);
+        defaultChk2013_1.put(12, chk2013_12);
+        defaultChk2013_1.put(13, chk2013_13);
+
+        try {
+            InputStream in = getActivity().openFileInput(file2013_1);
+            if(in != null) {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+                String str = "";
+
+                while ((str = reader.readLine()) != null) {
+                    i++;
+                    if(Integer.parseInt(str) != 0) {
+                        //i 값에 매핑된 체크박스 참조
+                        chkTemp = defaultChk2013_1.get(i);
+                        chkTemp.setChecked(true);
+                        chkTemp.setText("완료");
+                    }
+                }
+                in.close();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
