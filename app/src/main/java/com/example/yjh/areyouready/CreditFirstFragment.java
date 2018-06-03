@@ -865,32 +865,6 @@ public class CreditFirstFragment extends Fragment {
         return rootView;
     }
 
-    /*
-    public void onResume() {
-        super.onResume();
-        //enterYear 값에 맞는 default 보여주기
-        switch(enterYear) {
-            case "2017":
-                showDefault2017_1();
-                break;
-            case "2016":
-                showDefault2016_1();
-                break;
-            case "2015":
-                showDefault2015_1();
-                break;
-            case "2014":
-                showDefault2014_1();
-                break;
-            case "2013":
-                showDefault2013_1();
-                break;
-            default:
-                break;
-        }
-
-    }*/
-
     public void sharedPreferences() {
         context = getActivity();
         sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);

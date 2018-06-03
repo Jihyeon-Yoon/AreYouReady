@@ -112,7 +112,7 @@ public class Credit extends Fragment {
     public void applySharedPreference() {
         context = getActivity();
         sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
-        if(sh_Pref != null && sh_Pref.contains("enterYearFix")) {
+        if(sh_Pref != null) {
             enterYearFix = sh_Pref.getString("enterYearFix", "2017");
         }
     }

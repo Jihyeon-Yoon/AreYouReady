@@ -629,32 +629,6 @@ public class CreditFourthFragment extends Fragment {
         return rootView;
     }
 
-    /*
-    public void onResume() {
-        super.onResume();
-        //enterYear 값에 맞는 default 보여주기
-        switch(enterYear) {
-            case "2017":
-                showDefault2017_4();
-                break;
-            case "2016":
-                showDefault2016_4();
-                break;
-            case "2015":
-                showDefault2015_4();
-                break;
-            case "2014":
-                showDefault2014_4();
-                break;
-            case "2013":
-                showDefault2013_4();
-                break;
-            default:
-                break;
-        }
-
-    }*/
-
     public void sharedPreferences() {
         context = getActivity();
         sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);

@@ -845,32 +845,6 @@ public class CreditSecondFragment extends Fragment {
         return rootView;
     }
 
-    /*
-    public void onResume() {
-        super.onResume();
-        //enterYear 값에 맞는 default 보여주기
-        switch(enterYear) {
-            case "2017":
-                showDefault2017_2();
-                break;
-            case "2016":
-                showDefault2016_2();
-                break;
-            case "2015":
-                showDefault2015_2();
-                break;
-            case "2014":
-                showDefault2014_2();
-                break;
-            case "2013":
-                showDefault2013_2();
-                break;
-            default:
-                break;
-        }
-
-    }*/
-
     public void sharedPreferences() {
         context = getActivity();
         sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
