@@ -311,22 +311,22 @@ public class Check extends Fragment {
     public void applySharedPreference() {
         context = getActivity();
         sh_Pref = context.getSharedPreferences("STORE DATA", MODE_PRIVATE);
-        if(sh_Pref != null && sh_Pref.contains("bookNum")) {
+        if(sh_Pref != null) {
             bookNum = sh_Pref.getInt("bookNum", 0);
         }
-        if(sh_Pref != null && sh_Pref.contains("volunNum")) {
+        if(sh_Pref != null) {
             volunNum = sh_Pref.getInt("volunNum", 0);
         }
-        if(sh_Pref != null && sh_Pref.contains("volunTime")) {
+        if(sh_Pref != null) {
             volunTime = sh_Pref.getInt("volunTime", 0);
         }
-        if(sh_Pref != null && sh_Pref.contains("enterYearFix")) {
+        if(sh_Pref != null) {
             enterYearFix = sh_Pref.getString("enterYearFix", "2017");
         }
-        if(sh_Pref != null && sh_Pref.contains("totalCredit")) {
+        if(sh_Pref != null) {
             totalCredit = sh_Pref.getInt("totalCredit", 121);
         }
-        if(sh_Pref != null && sh_Pref.contains("currentCredit")) {
+        if(sh_Pref != null) {
             currentCredit = sh_Pref.getInt("currentCredit", 0);
         }
     }
