@@ -2774,7 +2774,7 @@
 
                     <TableRow>
                         <TextView
-                            android:text="글로벌시대의 리더십롭"
+                            android:text="글로벌시대의 리더십론"
                             android:textStyle="bold"
                             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
                             android:gravity="center"
