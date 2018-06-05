@@ -352,7 +352,6 @@ public class CreditSecondFragment extends Fragment {
                         sum += 3;
                     } else {
                         chk2017_8.setText("미완");
-                        out.write("3\n");
                         out.write("0\n");
                     }
                     if(chk2017_9.isChecked()) {
@@ -369,7 +368,6 @@ public class CreditSecondFragment extends Fragment {
                         sum += 1;
                     } else {
                         chk2017_10.setText("미완");
-                        out.write("1\n");
                         out.write("0\n");
                     }
                     if(chk2017_11.isChecked()) {
@@ -614,7 +612,6 @@ public class CreditSecondFragment extends Fragment {
                         sum += 3;
                     } else {
                         chk2015_7.setText("미완");
-                        out.write("3\n");
                         out.write("0\n");
                     }
                     if(chk2015_8.isChecked()) {

@@ -611,7 +611,6 @@ public class CreditFirstFragment extends Fragment {
                         sum += 1;
                     } else {
                         chk2015_4.setText("미완");
-                        out.write("1\n");
                         out.write("0\n");
                     }
                     if(chk2015_5.isChecked()) {
