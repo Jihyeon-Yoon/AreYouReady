@@ -426,6 +426,28 @@ public class CreditSecondFragment extends Fragment {
                     reset2015Credit();
                     reset2014Credit();
                     reset2013Credit();
+
+                    //다른 학번의 이수 학점 총합을 0으로 reset
+                    sharedPreferencesCreditSum("sum2016_1", 0);
+                    sharedPreferencesCreditSum("sum2016_2", 0);
+                    sharedPreferencesCreditSum("sum2016_3", 0);
+                    sharedPreferencesCreditSum("sum2016_4", 0);
+
+                    sharedPreferencesCreditSum("sum2015_1", 0);
+                    sharedPreferencesCreditSum("sum2015_2", 0);
+                    sharedPreferencesCreditSum("sum2015_3", 0);
+                    sharedPreferencesCreditSum("sum2015_4", 0);
+
+                    sharedPreferencesCreditSum("sum2014_1", 0);
+                    sharedPreferencesCreditSum("sum2014_2", 0);
+                    sharedPreferencesCreditSum("sum2014_3", 0);
+                    sharedPreferencesCreditSum("sum2014_4", 0);
+
+                    sharedPreferencesCreditSum("sum2013_1", 0);
+                    sharedPreferencesCreditSum("sum2013_2", 0);
+                    sharedPreferencesCreditSum("sum2013_3", 0);
+                    sharedPreferencesCreditSum("sum2013_4", 0);
+
                     Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -569,6 +591,28 @@ public class CreditSecondFragment extends Fragment {
                     reset2015Credit();
                     reset2014Credit();
                     reset2013Credit();
+
+                    //다른 학번의 이수 학점 총합을 0으로 reset
+                    sharedPreferencesCreditSum("sum2017_1", 0);
+                    sharedPreferencesCreditSum("sum2017_2", 0);
+                    sharedPreferencesCreditSum("sum2017_3", 0);
+                    sharedPreferencesCreditSum("sum2017_4", 0);
+
+                    sharedPreferencesCreditSum("sum2015_1", 0);
+                    sharedPreferencesCreditSum("sum2015_2", 0);
+                    sharedPreferencesCreditSum("sum2015_3", 0);
+                    sharedPreferencesCreditSum("sum2015_4", 0);
+
+                    sharedPreferencesCreditSum("sum2014_1", 0);
+                    sharedPreferencesCreditSum("sum2014_2", 0);
+                    sharedPreferencesCreditSum("sum2014_3", 0);
+                    sharedPreferencesCreditSum("sum2014_4", 0);
+
+                    sharedPreferencesCreditSum("sum2013_1", 0);
+                    sharedPreferencesCreditSum("sum2013_2", 0);
+                    sharedPreferencesCreditSum("sum2013_3", 0);
+                    sharedPreferencesCreditSum("sum2013_4", 0);
+
                     Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -704,6 +748,28 @@ public class CreditSecondFragment extends Fragment {
                     reset2016Credit();
                     reset2014Credit();
                     reset2013Credit();
+
+                    //다른 학번의 이수 학점 총합을 0으로 reset
+                    sharedPreferencesCreditSum("sum2017_1", 0);
+                    sharedPreferencesCreditSum("sum2017_2", 0);
+                    sharedPreferencesCreditSum("sum2017_3", 0);
+                    sharedPreferencesCreditSum("sum2017_4", 0);
+
+                    sharedPreferencesCreditSum("sum2016_1", 0);
+                    sharedPreferencesCreditSum("sum2016_2", 0);
+                    sharedPreferencesCreditSum("sum2016_3", 0);
+                    sharedPreferencesCreditSum("sum2016_4", 0);
+
+                    sharedPreferencesCreditSum("sum2014_1", 0);
+                    sharedPreferencesCreditSum("sum2014_2", 0);
+                    sharedPreferencesCreditSum("sum2014_3", 0);
+                    sharedPreferencesCreditSum("sum2014_4", 0);
+
+                    sharedPreferencesCreditSum("sum2013_1", 0);
+                    sharedPreferencesCreditSum("sum2013_2", 0);
+                    sharedPreferencesCreditSum("sum2013_3", 0);
+                    sharedPreferencesCreditSum("sum2013_4", 0);
+
                     Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -823,6 +889,28 @@ public class CreditSecondFragment extends Fragment {
                     reset2016Credit();
                     reset2015Credit();
                     reset2013Credit();
+
+                    //다른 학번의 이수 학점 총합을 0으로 reset
+                    sharedPreferencesCreditSum("sum2017_1", 0);
+                    sharedPreferencesCreditSum("sum2017_2", 0);
+                    sharedPreferencesCreditSum("sum2017_3", 0);
+                    sharedPreferencesCreditSum("sum2017_4", 0);
+
+                    sharedPreferencesCreditSum("sum2016_1", 0);
+                    sharedPreferencesCreditSum("sum2016_2", 0);
+                    sharedPreferencesCreditSum("sum2016_3", 0);
+                    sharedPreferencesCreditSum("sum2016_4", 0);
+
+                    sharedPreferencesCreditSum("sum2015_1", 0);
+                    sharedPreferencesCreditSum("sum2015_2", 0);
+                    sharedPreferencesCreditSum("sum2015_3", 0);
+                    sharedPreferencesCreditSum("sum2015_4", 0);
+
+                    sharedPreferencesCreditSum("sum2013_1", 0);
+                    sharedPreferencesCreditSum("sum2013_2", 0);
+                    sharedPreferencesCreditSum("sum2013_3", 0);
+                    sharedPreferencesCreditSum("sum2013_4", 0);
+
                     Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -950,6 +1038,28 @@ public class CreditSecondFragment extends Fragment {
                     reset2016Credit();
                     reset2015Credit();
                     reset2014Credit();
+
+                    //다른 학번의 이수 학점 총합을 0으로 reset
+                    sharedPreferencesCreditSum("sum2017_1", 0);
+                    sharedPreferencesCreditSum("sum2017_2", 0);
+                    sharedPreferencesCreditSum("sum2017_3", 0);
+                    sharedPreferencesCreditSum("sum2017_4", 0);
+
+                    sharedPreferencesCreditSum("sum2016_1", 0);
+                    sharedPreferencesCreditSum("sum2016_2", 0);
+                    sharedPreferencesCreditSum("sum2016_3", 0);
+                    sharedPreferencesCreditSum("sum2016_4", 0);
+
+                    sharedPreferencesCreditSum("sum2015_1", 0);
+                    sharedPreferencesCreditSum("sum2015_2", 0);
+                    sharedPreferencesCreditSum("sum2015_3", 0);
+                    sharedPreferencesCreditSum("sum2015_4", 0);
+
+                    sharedPreferencesCreditSum("sum2014_1", 0);
+                    sharedPreferencesCreditSum("sum2014_2", 0);
+                    sharedPreferencesCreditSum("sum2014_3", 0);
+                    sharedPreferencesCreditSum("sum2014_4", 0);
+
                     Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
