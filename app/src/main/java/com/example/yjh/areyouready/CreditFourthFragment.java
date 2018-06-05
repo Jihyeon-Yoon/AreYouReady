@@ -89,10 +89,25 @@ public class CreditFourthFragment extends Fragment {
     Button button2014;
     Button button2013;
 
+    String file2017_1 = "file2017_1.txt";
+    String file2017_2 = "file2017_2.txt";
+    String file2017_3 = "file2017_3.txt";
     String file2017_4 = "file2017_4.txt";
+    String file2016_1 = "file2016_1.txt";
+    String file2016_2 = "file2016_2.txt";
+    String file2016_3 = "file2016_3.txt";
     String file2016_4 = "file2016_4.txt";
+    String file2015_1 = "file2015_1.txt";
+    String file2015_2 = "file2015_2.txt";
+    String file2015_3 = "file2015_3.txt";
     String file2015_4 = "file2015_4.txt";
+    String file2014_1 = "file2014_1.txt";
+    String file2014_2 = "file2014_2.txt";
+    String file2014_3 = "file2014_3.txt";
     String file2014_4 = "file2014_4.txt";
+    String file2013_1 = "file2013_1.txt";
+    String file2013_2 = "file2013_2.txt";
+    String file2013_3 = "file2013_3.txt";
     String file2013_4 = "file2013_4.txt";
 
     //shared preference
@@ -236,7 +251,7 @@ public class CreditFourthFragment extends Fragment {
                 break;
         }
 
-        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지
+        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지 / 다른 학번 전부 0으로 reset
         button2017.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -319,6 +334,11 @@ public class CreditFourthFragment extends Fragment {
                     //2017_4 이수학점 총합 저장
                     sharedPreferencesCreditSum("sum2017_4", sum);
                     sharedPreferences();
+                    //다른 학번 파일 전부 0으로 reset
+                    reset2016Credit();
+                    reset2015Credit();
+                    reset2014Credit();
+                    reset2013Credit();
                     Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -326,7 +346,7 @@ public class CreditFourthFragment extends Fragment {
             }
         });
 
-        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지
+        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지 / 다른 학번 전부 0으로 reset
         button2016.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -409,6 +429,11 @@ public class CreditFourthFragment extends Fragment {
                     //2016_4 이수학점 총합 저장
                     sharedPreferencesCreditSum("sum2016_4", sum);
                     sharedPreferences();
+                    //다른 학번 파일 전부 0으로 reset
+                    reset2017Credit();
+                    reset2015Credit();
+                    reset2014Credit();
+                    reset2013Credit();
                     Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -416,7 +441,7 @@ public class CreditFourthFragment extends Fragment {
             }
         });
 
-        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지
+        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지 / 다른 학번 전부 0으로 reset
         button2015.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -499,6 +524,11 @@ public class CreditFourthFragment extends Fragment {
                     //2015_4 이수학점 총합 저장
                     sharedPreferencesCreditSum("sum2015_4", sum);
                     sharedPreferences();
+                    //다른 학번 파일 전부 0으로 reset
+                    reset2017Credit();
+                    reset2016Credit();
+                    reset2014Credit();
+                    reset2013Credit();
                     Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -506,7 +536,7 @@ public class CreditFourthFragment extends Fragment {
             }
         });
 
-        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지
+        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지 / 다른 학번 전부 0으로 reset
         button2014.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -589,6 +619,11 @@ public class CreditFourthFragment extends Fragment {
                     //2014_4 이수학점 총합 저장
                     sharedPreferencesCreditSum("sum2014_4", sum);
                     sharedPreferences();
+                    //다른 학번 파일 전부 0으로 reset
+                    reset2017Credit();
+                    reset2016Credit();
+                    reset2015Credit();
+                    reset2013Credit();
                     Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -596,7 +631,7 @@ public class CreditFourthFragment extends Fragment {
             }
         });
 
-        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지
+        //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지 / 다른 학번 전부 0으로 reset
         button2013.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -671,6 +706,11 @@ public class CreditFourthFragment extends Fragment {
                     //2013_4 이수학점 총합 저장
                     sharedPreferencesCreditSum("sum2013_4", sum);
                     sharedPreferences();
+                    //다른 학번 파일 전부 0으로 reset
+                    reset2017Credit();
+                    reset2016Credit();
+                    reset2015Credit();
+                    reset2014Credit();
                     Toast.makeText(getActivity(), "업데이트 되었습니다", Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -679,6 +719,171 @@ public class CreditFourthFragment extends Fragment {
         });
 
         return rootView;
+    }
+
+    //2017 파일 모두 0으로 reset
+    public void reset2017Credit() {
+        try {
+            int i;
+            //1학년 파일
+            OutputStreamWriter out = new OutputStreamWriter(getActivity().openFileOutput(file2017_1, 0));
+            for(i=0; i<17; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //2학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2017_2, 0));
+            for(i=0; i<14; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //3학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2017_3, 0));
+            for(i=0; i<13; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //4학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2017_4, 0));
+            for(i=0; i<9; i++) {
+                out.write("0\n");
+            }
+            out.close();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //2016 파일 모두 0으로 reset
+    public void reset2016Credit() {
+        try {
+            int i;
+            //1학년 파일
+            OutputStreamWriter out = new OutputStreamWriter(getActivity().openFileOutput(file2016_1, 0));
+            for(i=0; i<14; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //2학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2016_2, 0));
+            for(i=0; i<15; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //3학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2016_3, 0));
+            for(i=0; i<14; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //4학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2016_4, 0));
+            for(i=0; i<9; i++) {
+                out.write("0\n");
+            }
+            out.close();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //2015 파일 모두 0으로 reset
+    public void reset2015Credit() {
+        try {
+            int i;
+            //1학년 파일
+            OutputStreamWriter out = new OutputStreamWriter(getActivity().openFileOutput(file2015_1, 0));
+            for(i=0; i<13; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //2학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2015_2, 0));
+            for(i=0; i<14; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //3학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2015_3, 0));
+            for(i=0; i<14; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //4학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2015_4, 0));
+            for(i=0; i<9; i++) {
+                out.write("0\n");
+            }
+            out.close();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //2014 파일 모두 0으로 reset
+    public void reset2014Credit() {
+        try {
+            int i;
+            //1학년 파일
+            OutputStreamWriter out = new OutputStreamWriter(getActivity().openFileOutput(file2014_1, 0));
+            for(i=0; i<13; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //2학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2014_2, 0));
+            for(i=0; i<12; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //3학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2014_3, 0));
+            for(i=0; i<16; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //4학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2014_4, 0));
+            for(i=0; i<9; i++) {
+                out.write("0\n");
+            }
+            out.close();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //2013 파일 모두 0으로 reset
+    public void reset2013Credit() {
+        try {
+            int i;
+            //1학년 파일
+            OutputStreamWriter out = new OutputStreamWriter(getActivity().openFileOutput(file2013_1, 0));
+            for(i=0; i<13; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //2학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2013_2, 0));
+            for(i=0; i<13; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //3학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2013_3, 0));
+            for(i=0; i<15; i++) {
+                out.write("0\n");
+            }
+            out.close();
+            //4학년 파일
+            out = new OutputStreamWriter(getActivity().openFileOutput(file2013_4, 0));
+            for(i=0; i<8; i++) {
+                out.write("0\n");
+            }
+            out.close();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void sharedPreferences() {
@@ -721,11 +926,14 @@ public class CreditFourthFragment extends Fragment {
 
                 while ((str = reader.readLine()) != null) {
                     i++;
+                    //i 값에 매핑된 체크박스 참조
+                    chkTemp = defaultChk2017_4.get(i);
                     if(Integer.parseInt(str) != 0) {
-                        //i 값에 매핑된 체크박스 참조
-                        chkTemp = defaultChk2017_4.get(i);
                         chkTemp.setChecked(true);
                         chkTemp.setText("완료");
+                    } else {
+                        chkTemp.setChecked(false);
+                        chkTemp.setText("미완");
                     }
                 }
                 in.close();
@@ -759,11 +967,14 @@ public class CreditFourthFragment extends Fragment {
 
                 while ((str = reader.readLine()) != null) {
                     i++;
+                    //i 값에 매핑된 체크박스 참조
+                    chkTemp = defaultChk2016_4.get(i);
                     if(Integer.parseInt(str) != 0) {
-                        //i 값에 매핑된 체크박스 참조
-                        chkTemp = defaultChk2016_4.get(i);
                         chkTemp.setChecked(true);
                         chkTemp.setText("완료");
+                    } else {
+                        chkTemp.setChecked(false);
+                        chkTemp.setText("미완");
                     }
                 }
                 in.close();
@@ -797,11 +1008,14 @@ public class CreditFourthFragment extends Fragment {
 
                 while ((str = reader.readLine()) != null) {
                     i++;
+                    //i 값에 매핑된 체크박스 참조
+                    chkTemp = defaultChk2015_4.get(i);
                     if(Integer.parseInt(str) != 0) {
-                        //i 값에 매핑된 체크박스 참조
-                        chkTemp = defaultChk2015_4.get(i);
                         chkTemp.setChecked(true);
                         chkTemp.setText("완료");
+                    } else {
+                        chkTemp.setChecked(false);
+                        chkTemp.setText("미완");
                     }
                 }
                 in.close();
@@ -835,11 +1049,14 @@ public class CreditFourthFragment extends Fragment {
 
                 while ((str = reader.readLine()) != null) {
                     i++;
+                    //i 값에 매핑된 체크박스 참조
+                    chkTemp = defaultChk2014_4.get(i);
                     if(Integer.parseInt(str) != 0) {
-                        //i 값에 매핑된 체크박스 참조
-                        chkTemp = defaultChk2014_4.get(i);
                         chkTemp.setChecked(true);
                         chkTemp.setText("완료");
+                    } else {
+                        chkTemp.setChecked(false);
+                        chkTemp.setText("미완");
                     }
                 }
                 in.close();
@@ -872,11 +1089,14 @@ public class CreditFourthFragment extends Fragment {
 
                 while ((str = reader.readLine()) != null) {
                     i++;
+                    //i 값에 매핑된 체크박스 참조
+                    chkTemp = defaultChk2013_4.get(i);
                     if(Integer.parseInt(str) != 0) {
-                        //i 값에 매핑된 체크박스 참조
-                        chkTemp = defaultChk2013_4.get(i);
                         chkTemp.setChecked(true);
                         chkTemp.setText("완료");
+                    } else {
+                        chkTemp.setChecked(false);
+                        chkTemp.setText("미완");
                     }
                 }
                 in.close();
