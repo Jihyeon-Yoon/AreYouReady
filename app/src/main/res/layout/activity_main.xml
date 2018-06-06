@@ -24,6 +24,12 @@
         android:layout_marginStart="0dp"
         android:background="?android:attr/windowBackground"
         app:menu="@menu/navigation"
-        app:layout_behavior="tech.thdev.app.view.BottomNavigationBehavior"/>
+        app:layout_behavior="tech.thdev.app.view.BottomNavigationBehavior"
+
+        app:itemBackground="@color/nav_bg"
+        app:itemIconTint="@drawable/nav_select_color"
+        app:itemTextColor="@drawable/nav_select_color"
+
+        />
 
 </RelativeLayout>
