@@ -157,6 +157,29 @@ public class CreditFirstFragment extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        switch(enterYear) {
+            case "2017":
+                showDefault2017_1();
+                break;
+            case "2016":
+                showDefault2016_1();
+                break;
+            case "2015":
+                showDefault2015_1();
+                break;
+            case "2014":
+                showDefault2014_1();
+                break;
+            case "2013":
+                showDefault2013_1();
+                break;
+            default:
+                break;
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -285,7 +308,8 @@ public class CreditFirstFragment extends Fragment {
             }
         }
 
-        switch(enterYear) {
+
+        /*switch(enterYear) {
             case "2017":
                 showDefault2017_1();
                 break;
@@ -303,7 +327,7 @@ public class CreditFirstFragment extends Fragment {
                 break;
             default:
                 break;
-        }
+        }*/
 
         //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지 / 다른 학번 전부 0으로 reset
         button2017.setOnClickListener(new View.OnClickListener(){

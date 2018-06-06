@@ -155,6 +155,30 @@ public class CreditSecondFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        switch(enterYear) {
+            case "2017":
+                showDefault2017_2();
+                break;
+            case "2016":
+                showDefault2016_2();
+                break;
+            case "2015":
+                showDefault2015_2();
+                break;
+            case "2014":
+                showDefault2014_2();
+                break;
+            case "2013":
+                showDefault2013_2();
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -278,7 +302,7 @@ public class CreditSecondFragment extends Fragment {
             }
         }
 
-        switch(enterYear) {
+        /*switch(enterYear) {
             case "2017":
                 showDefault2017_2();
                 break;
@@ -296,7 +320,7 @@ public class CreditSecondFragment extends Fragment {
                 break;
             default:
                 break;
-        }
+        }*/
 
         //파일 저장, 완료 변경, 총이수 저장, 입학년도 저장, 토스트메시지 / 다른 학번 전부 0으로 reset
         button2017.setOnClickListener(new View.OnClickListener(){
