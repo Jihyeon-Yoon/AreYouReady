@@ -14,8 +14,8 @@ public class IntroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_intro);
 
         // 액션바 감추기
-       /* ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();*/
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

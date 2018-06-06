@@ -34,6 +34,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:text="교양과목 안내 표"
+        android:textStyle="bold"
+        android:textColor="#fdfbfb"
         android:layout_weight="1"
+        android:backgroundTint="#85b851"
         />
 </LinearLayout>

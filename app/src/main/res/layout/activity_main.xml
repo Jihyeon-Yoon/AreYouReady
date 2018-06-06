@@ -30,6 +30,9 @@
         app:itemIconTint="@drawable/nav_select_color"
         app:itemTextColor="@drawable/nav_select_color"
 
+        android:theme="@style/Widget.BottomNavigationView"
+        />
+
         />
 
 </RelativeLayout>
