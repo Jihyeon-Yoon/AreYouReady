@@ -69,4 +69,11 @@ public class MainActivity extends AppCompatActivity
 
         return loadFragment(fragment);
     }
+
+   /* // 메뉴(creidt page, 저작권, 오픈 소스 사용 등 표기)
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu)
+    }*/
+
 }
