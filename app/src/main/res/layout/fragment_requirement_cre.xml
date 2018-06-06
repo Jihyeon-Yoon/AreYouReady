@@ -33,7 +33,7 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="교양과목 안내 표"
+        android:text="영역별 학과 지정 교양 과목 (17학번 이후)"
         android:textStyle="bold"
         android:textColor="#fdfbfb"
         android:layout_weight="1"
