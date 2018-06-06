@@ -4,6 +4,5 @@
     <item android:id="@+id/menu_credit_page"
         android:title="attribution"
         app:showAsAction="always"
-        app:src="@drawable/a1"
         />
 </menu>
