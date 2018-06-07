@@ -80,19 +80,24 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    /*@Override
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int curId = item.getItemId();
-        Intent intent = new Intent(get)
+        Intent intent = null;
+
         switch(curId) {
             case R.id.menu_site:
+                intent = new Intent (getApplicationContext(), SiteActivity.class);
                 break;
             case R.id.menu_copyright:
+                intent = new Intent (getApplicationContext(), CopyrightActivity.class);
                 break;
             default:
                 break;
         }
+
+        startActivity(intent);
         return super.onOptionsItemSelected(item);
-    }*/
+    }
 
 }

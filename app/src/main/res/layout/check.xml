@@ -589,7 +589,7 @@
                     android:gravity="center"
                     android:layout_width="90dp"
                     android:layout_height="wrap_content"
-                    android:text="이수 과목"
+                    android:text="이수 학점"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"/>
                 <TextView
                     android:id="@+id/textView_creditNow"
