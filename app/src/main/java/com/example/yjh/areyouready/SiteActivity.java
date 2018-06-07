@@ -34,7 +34,6 @@ public class SiteActivity extends AppCompatActivity {
         Button study4 = findViewById(R.id.study4);
         Button study5 = findViewById(R.id.study5);
         Button study6 = findViewById(R.id.study6);
-        Button study7 = findViewById(R.id.study7);
 
         english1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,15 +184,6 @@ public class SiteActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW,
                         Uri.parse("https://algospot.com/"));
-                startActivity(intent);
-            }
-        });
-
-        study7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://codefights.com/"));
                 startActivity(intent);
             }
         });
