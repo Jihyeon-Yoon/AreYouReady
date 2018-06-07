@@ -45,7 +45,9 @@
         <activity android:name=".InfoVolunteerActivity" />
         <activity android:name=".VolunteerMapActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".LiberalArtsViewActivity"></activity>
+        <activity android:name=".LiberalArtsViewActivity" />
+        <activity android:name=".SiteActivity" />
+        <activity android:name=".CopyrightActivity"></activity>
     </application>
 
 </manifest>

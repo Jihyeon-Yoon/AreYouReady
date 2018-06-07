@@ -49,10 +49,11 @@
 
                     <Button
                         android:id="@+id/btn_website"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:text="Website Link"
+                        android:text="웹사이트"
                         android:textSize="19dp"
+                        android:textStyle="bold"
                         android:textColor="#fdfdfd"
                         android:layout_margin="3dp"
                         android:layout_alignParentRight="true"

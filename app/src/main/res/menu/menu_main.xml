@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/menu_credit_page"
-        android:title="attribution"
-        app:showAsAction="always"
-        />
+
+    <item android:id="@+id/menu_site"
+        android:title="유용한 사이트"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/menu_copyright"
+        android:title="저작권 정보"
+        app:showAsAction="never" />
+
 </menu>

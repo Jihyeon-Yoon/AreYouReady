@@ -1,11 +1,13 @@
 package com.example.yjh.areyouready;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -70,10 +72,27 @@ public class MainActivity extends AppCompatActivity
         return loadFragment(fragment);
     }
 
-   /* // 메뉴(creidt page, 저작권, 오픈 소스 사용 등 표기)
+   // 메뉴(유용한 사이트, 저작권 정보)
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu)
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+
+    /*@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int curId = item.getItemId();
+        Intent intent = new Intent(get)
+        switch(curId) {
+            case R.id.menu_site:
+                break;
+            case R.id.menu_copyright:
+                break;
+            default:
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }*/
 
 }
