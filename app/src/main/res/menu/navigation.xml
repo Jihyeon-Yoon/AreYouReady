@@ -25,4 +25,5 @@
         android:id="@+id/navigation_check"
         android:icon="@drawable/checked"
         android:title="@string/title_check" />
+
 </menu>
