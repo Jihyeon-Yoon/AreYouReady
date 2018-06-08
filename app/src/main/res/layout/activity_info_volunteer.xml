@@ -212,6 +212,27 @@
                 android:textSize="19dp"
                 />
 
+             <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#a0a3a2"
+                android:layout_marginTop="5dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="사진 출처 : 기관 웹사이트"
+                android:layout_marginTop="5dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="내용 출처 : VMS, 1365 자원봉사포털"
+                android:layout_marginTop="5dp"
+                />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

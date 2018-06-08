@@ -151,10 +151,16 @@
                 />
 
             <TextView
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="출처 : YES24, 교보문고, 네이버 책"
+                android:text="사진 출처 : YES24"
+                android:layout_marginTop="5dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="내용 출처 : YES24, 교보문고, 네이버 책"
                 android:layout_marginTop="5dp"
                 />
 
