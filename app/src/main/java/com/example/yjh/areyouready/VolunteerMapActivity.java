@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -30,6 +31,10 @@ public class VolunteerMapActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volunteer_map);
+
+        // 액션바 감추기
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(new OnMapReadyCallback() {
@@ -79,8 +84,11 @@ public class VolunteerMapActivity extends AppCompatActivity {
             locationMarker = new MarkerOptions();
             locationMarker.position(new LatLng(latitude, longitude));
 
+            Intent intent = getIntent();
+            String title = intent.getStringExtra("title");
+
             locationMarker.title("봉사기관");
-            locationMarker.snippet("봉사기관 위치"); // 봉사기관 이름 넣어주기
+            locationMarker.snippet(title); // 봉사기관 이름
             locationMarker.icon(BitmapDescriptorFactory.fromResource(R.drawable.placeholder));
             map.addMarker(locationMarker);
         }
