@@ -67,10 +67,10 @@ public class BookLiteratureKoFragment extends Fragment {
                     System.out.printf("0x%04x", (int)c); //test
                 }
                 System.out.println(); //test*/
-                int bookResId = getResources().getIdentifier(bookImgName, "drawable", "com.example.yjh.areyouready");
+                int bookResId = getResources().getIdentifier(bookImgName, "drawable", "com.mpyg.yjh.areyouready");
 
                 String ratingImgName = "rating" + temp[1];
-                int ratingResId = getResources().getIdentifier(ratingImgName, "drawable", "com.example.yjh.areyouready");
+                int ratingResId = getResources().getIdentifier(ratingImgName, "drawable", "com.mpyg.yjh.areyouready");
                 int rating = Integer.parseInt(temp[1]);
                 String title = temp[2];
                 String author = temp[3];

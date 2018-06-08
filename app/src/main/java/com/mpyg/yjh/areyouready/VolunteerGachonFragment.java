@@ -68,7 +68,7 @@ public class VolunteerGachonFragment extends Fragment {
                     System.out.printf("0x%04x", (int)c); //test
                 }
                 System.out.println(); //test*/
-                int volResId = getResources().getIdentifier(volImgName, "drawable", "com.example.yjh.areyouready");
+                int volResId = getResources().getIdentifier(volImgName, "drawable", "com.mpyg.yjh.areyouready");
                 String title = temp[1];
                 String content = temp[2];
                 String phoneNum = temp[3];
