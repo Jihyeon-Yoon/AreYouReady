@@ -1,5 +1,6 @@
 package com.example.yjh.areyouready;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,7 +15,9 @@ public class InfoBookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_book);
 
-        setTitle("도서 정보");
+        // 타이틀바 가운데 정렬
+        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        getSupportActionBar().setCustomView(R.layout.actionbar_info_book);
 
         bookImageView = findViewById(R.id.iv_book);
         ratingImageView = findViewById(R.id.iv_rating);
