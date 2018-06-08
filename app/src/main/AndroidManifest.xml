@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.yjh.areyouready">
+    package="com.mpyg.yjh.areyouready">
 
     <permission
         android:name="yohan.org.navigationtest.permission.MAPS_RECEIVE"
@@ -33,7 +33,7 @@
             android:value="AIzaSyDDLjaUv-vp7cgjNdzoH7oUto2zx9WOpMw" />
 
         <activity
-            android:name=".IntroActivity"
+            android:name="com.mpyg.yjh.areyouready.IntroActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,13 +41,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InfoBookActivity" />
-        <activity android:name=".InfoVolunteerActivity" />
-        <activity android:name=".VolunteerMapActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".LiberalArtsViewActivity" />
-        <activity android:name=".SiteActivity" />
-        <activity android:name=".CopyrightActivity"></activity>
+        <activity android:name="com.mpyg.yjh.areyouready.InfoBookActivity" />
+        <activity android:name="com.mpyg.yjh.areyouready.InfoVolunteerActivity" />
+        <activity android:name="com.mpyg.yjh.areyouready.VolunteerMapActivity" />
+        <activity android:name="com.mpyg.yjh.areyouready.MainActivity" />
+        <activity android:name="com.mpyg.yjh.areyouready.LiberalArtsViewActivity" />
+        <activity android:name="com.mpyg.yjh.areyouready.SiteActivity" />
+        <activity android:name="com.mpyg.yjh.areyouready.CopyrightActivity"></activity>
     </application>
 
 </manifest>
